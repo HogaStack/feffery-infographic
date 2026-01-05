@@ -26,5 +26,5 @@ setup(
     classifiers=[
         "Framework :: Dash",
     ],
-    url="https://github.com/CNFeffery/feffery-infographic",
+    url="https://github.com/HogaStack/feffery-infographic",
 )
