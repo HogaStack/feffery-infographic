@@ -1,0 +1,6 @@
+include feffery_infographic/*.js
+include feffery_infographic/*.map
+include *.json
+include README.md
+include LICENSE
+include package.json
