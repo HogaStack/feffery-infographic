@@ -11,6 +11,8 @@ app.layout = html.Div(
         html.Button("change infographic", id="change-info-graphic"),
         fi.Infographic(
             id="info-graphic",
+            padding=200,
+            height=700,
             syntax="""
 infographic list-row-simple-horizontal-arrow
 data
@@ -22,6 +24,11 @@ data
     - label 步骤 3
       desc 完成
 """,
+            style={
+                "border": "1px solid #e8e8e8",
+                "display": "flex",
+                "justifyContent": "center",
+            },
         ),
     ],
     style=style(padding=50),
