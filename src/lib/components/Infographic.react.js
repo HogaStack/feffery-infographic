@@ -13,6 +13,9 @@ const Infographic = ({
     style,
     className,
     syntax,
+    width,
+    height,
+    padding,
     ...others
 }) => {
 
@@ -21,8 +24,9 @@ const Infographic = ({
     useEffect(() => {
         const infographic = new InfographicCore({
             container: containerRef.current,
-            width: '100%',
-            height: '100%',
+            width: width,
+            height: height,
+            padding: padding
         });
 
         infographic.render(syntax);
@@ -72,6 +76,24 @@ Infographic.propTypes = {
      * (Required, infographic syntax)
      */
     syntax: PropTypes.string.isRequired,
+
+    /**
+     * 信息图宽度，支持数值型和字符型输入
+     * (Infographic width, support numeric and character input)
+     */
+    width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * 信息图高度，支持数值型和字符型输入
+     * (Infographic height, support numeric and character input)
+     */
+    height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+
+    /**
+     * 信息图像素内边距，支持数值型，或格式如`[上, 右, 下, 左]`各自方向上像素内边距的数组
+     * (Infographic pixel margin, support numeric, or format like `[top, right, bottom, left]` array of each direction pixel margin)
+     */
+    padding: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),
 
     /**
      * Dash-assigned callback that should be called to report property changes
