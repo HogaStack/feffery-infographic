@@ -1,8 +1,8 @@
 // react核心
-import {useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 // 组件核心
-import {Infographic as InfographicCore} from '@antv/infographic';
+import { Infographic as InfographicCore } from '@antv/infographic';
 
 /**
  * 信息图渲染组件
@@ -18,22 +18,41 @@ const Infographic = ({
     padding,
     ..._others
 }) => {
+    const infographicRef = useRef(null);
     const containerRef = useRef(null);
 
     useEffect(() => {
-        const infographic = new InfographicCore({
+        if (infographicRef.current) {
+            infographicRef.current.update({
+                width: width,
+                height: height,
+                padding: padding,
+            });
+        }
+    }, [width, height, padding]);
+
+    useEffect(() => {
+        if (infographicRef.current) {
+            infographicRef.current.render(syntax);
+        }
+    }, [syntax]);
+
+    useEffect(() => {
+        infographicRef.current = new InfographicCore({
             container: containerRef.current,
             width: width,
             height: height,
             padding: padding,
         });
 
-        infographic.render(syntax);
+        if (syntax) {
+            infographicRef.current.render(syntax);
+        }
 
         return () => {
-            infographic.destroy();
+            infographicRef.current.destroy();
         };
-    }, [syntax]);
+    }, []);
 
     return (
         <div id={id} style={style} className={className} ref={containerRef} />
