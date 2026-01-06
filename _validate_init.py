@@ -2,6 +2,7 @@
 DO NOT MODIFY
 This file is used to validate your publish settings.
 """
+
 from __future__ import print_function
 
 import os
@@ -14,10 +15,10 @@ components_package = 'feffery_infographic'
 components_lib = importlib.import_module(components_package)
 
 missing_dist_msg = 'Warning {} was not found in `{}.__init__.{}`!!!'
-missing_manifest_msg = '''
+missing_manifest_msg = """
 Warning {} was not found in `MANIFEST.in`!
 It will not be included in the build!
-'''
+"""
 
 with open('MANIFEST.in', 'r') as f:
     manifest = f.read()
@@ -47,16 +48,14 @@ def check_file(dist, filename):
     if not check_dist(dist, filename):
         print(
             missing_dist_msg.format(filename, components_package, '_js_dist'),
-            file=sys.stderr
+            file=sys.stderr,
         )
     if not check_manifest(filename):
-        print(missing_manifest_msg.format(filename),
-              file=sys.stderr)
+        print(missing_manifest_msg.format(filename), file=sys.stderr)
 
 
 for cur, _, files in os.walk(components_package):
     for f in files:
-
         if f.endswith('js'):
             # noinspection PyProtectedMember
             check_file(components_lib._js_dist, f)

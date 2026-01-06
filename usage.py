@@ -8,9 +8,9 @@ app = dash.Dash(__name__, compress=True)
 
 app.layout = html.Div(
     [
-        html.Button("change infographic", id="change-info-graphic"),
+        html.Button('change infographic', id='change-info-graphic'),
         fi.Infographic(
-            id="info-graphic",
+            id='info-graphic',
             padding=200,
             height=700,
             syntax="""
@@ -25,9 +25,9 @@ data
       desc 完成
 """,
             style={
-                "border": "1px solid #e8e8e8",
-                "display": "flex",
-                "justifyContent": "center",
+                'border': '1px solid #e8e8e8',
+                'display': 'flex',
+                'justifyContent': 'center',
             },
         ),
     ],
@@ -36,13 +36,13 @@ data
 
 
 @app.callback(
-    Input("change-info-graphic", "n_clicks"),
+    Input('change-info-graphic', 'n_clicks'),
 )
 def change_infographic(n_clicks):
     set_props(
-        "info-graphic",
+        'info-graphic',
         {
-            "syntax": """
+            'syntax': """
 infographic chart-bar-plain-text
 data
   title 年度营收增长
@@ -69,8 +69,8 @@ theme light
 """
         },
     )
-    set_props("change-info-graphic", {"disabled": True})
+    set_props('change-info-graphic', {'disabled': True})
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app.run(debug=True)
