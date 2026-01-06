@@ -54,3 +54,34 @@ jobs:
         python -m pytest tests/ -v
       env:
         DISPLAY: :99
+
+  lint-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '18'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          npm install
+          python -m pip install --upgrade pip
+          pip install ruff
+
+      - name: Run lint check
+        run: |
+          eslint 'src/**/*.js' 'src/**/*.react.js'
+          python -m ruff check . --exclude=node_modules,venv,build
+
+      - name: Run format check
+        run: |
+          prettier --check 'src/**/*.js' 'src/**/*.react.js'
+          python -m ruff format . --check --exclude=node_modules,venv,build
