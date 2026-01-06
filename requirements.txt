@@ -2,4 +2,5 @@
 dash[testing]>=3.3.0
 feffery_dash_utils
 flask_compress
+pyyaml
 ruff
