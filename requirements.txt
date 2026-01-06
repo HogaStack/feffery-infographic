@@ -4,3 +4,4 @@ feffery_dash_utils
 flask_compress
 pyyaml
 ruff
+build
