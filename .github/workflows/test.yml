@@ -78,10 +78,10 @@ jobs:
 
       - name: Run lint check
         run: |
-          eslint 'src/**/*.js' 'src/**/*.react.js'
+          npx eslint src/**/*.js src/**/*.react.js
           python -m ruff check . --exclude=node_modules,venv,build
 
       - name: Run format check
         run: |
-          prettier --check 'src/**/*.js' 'src/**/*.react.js'
+          npx prettier --check src/**/*.js src/**/*.react.js
           python -m ruff format . --check --exclude=node_modules,venv,build
