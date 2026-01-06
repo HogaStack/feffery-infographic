@@ -1,8 +1,9 @@
 import dash
 from dash import html, set_props
-import feffery_infographic as fi
 from dash.dependencies import Input
 from feffery_dash_utils.style_utils import style
+
+import feffery_infographic as fi
 
 app = dash.Dash(__name__, compress=True)
 

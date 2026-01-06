@@ -5,10 +5,9 @@ This file is used to validate your publish settings.
 
 from __future__ import print_function
 
+import importlib
 import os
 import sys
-import importlib
-
 
 components_package = 'feffery_infographic'
 

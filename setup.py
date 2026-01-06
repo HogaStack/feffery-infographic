@@ -1,6 +1,7 @@
 import json
-from setuptools import setup
 from pathlib import Path
+
+from setuptools import setup
 
 here = Path(__file__).parent
 with open('package.json') as f:
