@@ -36,7 +36,7 @@ jobs:
     - name: Build package
       run: |
         npm run build
-        python setup.py sdist bdist_wheel
+        python -m build
     
     - name: Install browser for testing
       run: |
