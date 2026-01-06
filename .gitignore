@@ -11,6 +11,8 @@
 /feffery_infographic/__pycache__
 /feffery_infographic.egg-info
 
+/tests/__pycache__
+
 /inst
 /man
 /node_modules

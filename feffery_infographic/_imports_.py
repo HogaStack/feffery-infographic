@@ -1,5 +1,3 @@
 from .Infographic import Infographic
 
-__all__ = [
-    "Infographic"
-]
+__all__ = ['Infographic']

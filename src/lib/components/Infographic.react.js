@@ -1,8 +1,8 @@
 // react核心
-import { useEffect, useRef } from 'react';
+import {useEffect, useRef} from 'react';
 import PropTypes from 'prop-types';
 // 组件核心
-import { Infographic as InfographicCore } from '@antv/infographic';
+import {Infographic as InfographicCore} from '@antv/infographic';
 
 /**
  * 信息图渲染组件
@@ -16,9 +16,8 @@ const Infographic = ({
     width,
     height,
     padding,
-    ...others
+    ..._others
 }) => {
-
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -26,7 +25,7 @@ const Infographic = ({
             container: containerRef.current,
             width: width,
             height: height,
-            padding: padding
+            padding: padding,
         });
 
         infographic.render(syntax);
@@ -37,14 +36,9 @@ const Infographic = ({
     }, [syntax]);
 
     return (
-        <div
-            id={id}
-            style={style}
-            className={className}
-            ref={containerRef}
-        />
+        <div id={id} style={style} className={className} ref={containerRef} />
     );
-}
+};
 
 Infographic.propTypes = {
     /**
@@ -93,13 +87,16 @@ Infographic.propTypes = {
      * 信息图像素内边距，支持数值型，或格式如`[上, 右, 下, 左]`各自方向上像素内边距的数组
      * (Infographic pixel margin, support numeric, or format like `[top, right, bottom, left]` array of each direction pixel margin)
      */
-    padding: PropTypes.oneOfType([PropTypes.number, PropTypes.arrayOf(PropTypes.number)]),
+    padding: PropTypes.oneOfType([
+        PropTypes.number,
+        PropTypes.arrayOf(PropTypes.number),
+    ]),
 
     /**
      * Dash-assigned callback that should be called to report property changes
      * to Dash, to make them available for callbacks.
      */
-    setProps: PropTypes.func
+    setProps: PropTypes.func,
 };
 
 export default Infographic;
