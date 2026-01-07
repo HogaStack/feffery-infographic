@@ -1,6 +1,7 @@
 line-length = 100
 show-fixes = true
 target-version = "py38"
+indent-width = 4
 
 [lint]
 select = [
