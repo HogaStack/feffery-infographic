@@ -14,6 +14,7 @@ app.layout = html.Div(
             id='info-graphic',
             padding=200,
             height=700,
+            debugWindowInstanceName='demoInforaphic',
             syntax="""
 infographic list-row-simple-horizontal-arrow
 data
