@@ -49,7 +49,12 @@ class Infographic(Component):
     - padding (number | list of numbers; optional):
         信息图像素内边距，支持数值型，或格式如`[上, 右, 下, 左]`各自方向上像素内边距的数组 (Infographic pixel
         margin, support numeric, or format like `[top, right, bottom,
-        left]` array of each direction pixel margin)."""
+        left]` array of each direction pixel margin).
+
+    - debugWindowInstanceName (string; optional):
+        调试用参数，有效设置后会将当前信息图实例挂载到`window`对象下对应的变量名上 (Debugging parameters,
+        valid setting will mount the current infographic instance to the
+        `window` object under the corresponding variable name)."""
 
     _children_props: typing.List[str] = []
     _base_nodes = ['children']
@@ -66,6 +71,7 @@ class Infographic(Component):
         width: typing.Optional[typing.Union[NumberType, str]] = None,
         height: typing.Optional[typing.Union[NumberType, str]] = None,
         padding: typing.Optional[typing.Union[NumberType, typing.Sequence[NumberType]]] = None,
+        debugWindowInstanceName: typing.Optional[str] = None,
         **kwargs,
     ):
         self._prop_names = [
@@ -77,6 +83,7 @@ class Infographic(Component):
             'width',
             'height',
             'padding',
+            'debugWindowInstanceName',
         ]
         self._valid_wildcard_attributes = []
         self.available_properties = [
@@ -88,6 +95,7 @@ class Infographic(Component):
             'width',
             'height',
             'padding',
+            'debugWindowInstanceName',
         ]
         self.available_wildcard_properties = []
         _explicit_args = kwargs.pop('_explicit_args')

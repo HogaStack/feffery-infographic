@@ -16,6 +16,7 @@ const Infographic = ({
     width,
     height,
     padding,
+    debugWindowInstanceName,
     ..._others
 }) => {
     const infographicRef = useRef(null);
@@ -49,8 +50,15 @@ const Infographic = ({
             infographicRef.current.render(syntax);
         }
 
+        if (debugWindowInstanceName) {
+            window[debugWindowInstanceName] = infographicRef.current;
+        }
+
         return () => {
             infographicRef.current.destroy();
+            if (debugWindowInstanceName) {
+                delete window[debugWindowInstanceName];
+            }
         };
     }, []);
 
@@ -110,6 +118,12 @@ Infographic.propTypes = {
         PropTypes.number,
         PropTypes.arrayOf(PropTypes.number),
     ]),
+
+    /**
+     * 调试用参数，有效设置后会将当前信息图实例挂载到`window`对象下对应的变量名上
+     * (Debugging parameters, valid setting will mount the current infographic instance to the `window` object under the corresponding variable name)
+     */
+    debugWindowInstanceName: PropTypes.string,
 
     /**
      * Dash-assigned callback that should be called to report property changes
