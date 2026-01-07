@@ -29,7 +29,7 @@ async function exportInfographic(instance, triggerOptions, setProps) {
     setProps({
         exportEvent: {
             timestamp: Date.now(),
-            type: triggerOptions.type || 'png',
+            type: triggerOptions.type,
             data: dataURL,
         },
     });
