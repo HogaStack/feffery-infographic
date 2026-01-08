@@ -3,6 +3,8 @@ import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 // 组件核心
 import { Infographic as InfographicCore } from '@antv/infographic';
+// 工具函数
+import { exportInfographic } from '../utils';
 
 /**
  * 信息图渲染组件
@@ -16,7 +18,9 @@ const Infographic = ({
     width,
     height,
     padding,
+    exportTrigger,
     debugWindowInstanceName,
+    setProps,
     ..._others
 }) => {
     const infographicRef = useRef(null);
@@ -37,6 +41,25 @@ const Infographic = ({
             infographicRef.current.render(syntax);
         }
     }, [syntax]);
+
+    useEffect(() => {
+        if (infographicRef.current && exportTrigger) {
+            // 处理信息图导出及下载
+            exportInfographic(
+                infographicRef.current,
+                {
+                    type: 'png',
+                    dpr: 1,
+                    fileName: 'infographic_export',
+                    download: true,
+                    ...exportTrigger,
+                },
+                setProps
+            );
+            // 重置exportTrigger
+            setProps({ exportTrigger: null });
+        }
+    }, [exportTrigger]);
 
     useEffect(() => {
         infographicRef.current = new InfographicCore({
@@ -118,6 +141,60 @@ Infographic.propTypes = {
         PropTypes.number,
         PropTypes.arrayOf(PropTypes.number),
     ]),
+
+    /**
+     * 每次有效更新都会触发针对当前信息图的图片导出、下载操作，每次执行后都会被重置为空值
+     * (Each time a valid update is triggered, a picture export and download operation will be triggered for the current infographic, and each time it will be reset to an empty value)
+     */
+    exportTrigger: PropTypes.shape({
+        /**
+         * 图片导出类型，可选项有`'png'`、`'svg'`
+         * (Image export type, optional items include `'png'` and `'svg'`)
+         * 默认值：`'png'`
+         * (Default: `'png'`)
+         */
+        type: PropTypes.oneOf(['png', 'svg']),
+        /**
+         * 当导出`'png'`类型图片时，用于设置导出图片的像素比
+         * (When exporting the `'png'` type image, set the export image pixel ratio)
+         * 默认值：`1`
+         * (Default: `1`)
+         */
+        dpr: PropTypes.number,
+        /**
+         * 是否触发下载操作
+         * (Whether to trigger the download operation)
+         * 默认值：`true`
+         * (Default: `true`)
+         */
+        download: PropTypes.bool,
+        /**
+         * 当触发下载操作时，控制下载文件的文件名
+         * (When triggering the download operation, control the download file name)
+         * 默认值：`'infographic_export'`
+         * (Default: `'infographic_export'`)
+         */
+        fileName: PropTypes.string,
+    }),
+
+    /**
+     * 记录最近一次通过参数`exportTrigger`有效触发的图片导出操作事件信息
+     * (Record the latest event information of the image export operation triggered by the parameter `exportTrigger`)
+     */
+    exportEvent: PropTypes.shape({
+        /**
+         * 事件时间戳
+         */
+        timestamp: PropTypes.number,
+        /**
+         * 图片类型，可能值有`'png'`、`'svg'`
+         */
+        type: PropTypes.oneOf(['png', 'svg']),
+        /**
+         * 图片对应`dataURL`数据
+         */
+        data: PropTypes.string,
+    }),
 
     /**
      * 调试用参数，有效设置后会将当前信息图实例挂载到`window`对象下对应的变量名上

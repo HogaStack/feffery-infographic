@@ -51,6 +51,48 @@ class Infographic(Component):
         margin, support numeric, or format like `[top, right, bottom,
         left]` array of each direction pixel margin).
 
+    - exportTrigger (dict; optional):
+        每次有效更新都会触发针对当前信息图的图片导出、下载操作，每次执行后都会被重置为空值 (Each time a valid
+        update is triggered, a picture export and download operation will
+        be triggered for the current infographic, and each time it will be
+        reset to an empty value).
+
+        `exportTrigger` is a dict with keys:
+
+        - type (a value equal to: 'png', 'svg'; optional):
+            图片导出类型，可选项有`'png'`、`'svg'` (Image export type, optional items
+            include `'png'` and `'svg'`) 默认值：`'png'` (Default: `'png'`).
+
+        - dpr (number; optional):
+            当导出`'png'`类型图片时，用于设置导出图片的像素比 (When exporting the `'png'` type
+            image, set the export image pixel ratio) 默认值：`1` (Default:
+            `1`).
+
+        - download (boolean; optional):
+            是否触发下载操作 (Whether to trigger the download operation)
+            默认值：`True` (Default: `True`).
+
+        - fileName (string; optional):
+            当触发下载操作时，控制下载文件的文件名 (When triggering the download operation,
+            control the download file name) 默认值：`'infographic_export'`
+            (Default: `'infographic_export'`).
+
+    - exportEvent (dict; optional):
+        记录最近一次通过参数`exportTrigger`有效触发的图片导出操作事件信息 (Record the latest event
+        information of the image export operation triggered by the
+        parameter `exportTrigger`).
+
+        `exportEvent` is a dict with keys:
+
+        - timestamp (number; optional):
+            事件时间戳.
+
+        - type (a value equal to: 'png', 'svg'; optional):
+            图片类型，可能值有`'png'`、`'svg'`.
+
+        - data (string; optional):
+            图片对应`dataURL`数据.
+
     - debugWindowInstanceName (string; optional):
         调试用参数，有效设置后会将当前信息图实例挂载到`window`对象下对应的变量名上 (Debugging parameters,
         valid setting will mount the current infographic instance to the
@@ -60,6 +102,24 @@ class Infographic(Component):
     _base_nodes = ['children']
     _namespace = 'feffery_infographic'
     _type = 'Infographic'
+    ExportTrigger = TypedDict(
+        'ExportTrigger',
+        {
+            'type': NotRequired[Literal['png', 'svg']],
+            'dpr': NotRequired[NumberType],
+            'download': NotRequired[bool],
+            'fileName': NotRequired[str],
+        },
+    )
+
+    ExportEvent = TypedDict(
+        'ExportEvent',
+        {
+            'timestamp': NotRequired[NumberType],
+            'type': NotRequired[Literal['png', 'svg']],
+            'data': NotRequired[str],
+        },
+    )
 
     def __init__(
         self,
@@ -71,6 +131,8 @@ class Infographic(Component):
         width: typing.Optional[typing.Union[NumberType, str]] = None,
         height: typing.Optional[typing.Union[NumberType, str]] = None,
         padding: typing.Optional[typing.Union[NumberType, typing.Sequence[NumberType]]] = None,
+        exportTrigger: typing.Optional['ExportTrigger'] = None,
+        exportEvent: typing.Optional['ExportEvent'] = None,
         debugWindowInstanceName: typing.Optional[str] = None,
         **kwargs,
     ):
@@ -83,6 +145,8 @@ class Infographic(Component):
             'width',
             'height',
             'padding',
+            'exportTrigger',
+            'exportEvent',
             'debugWindowInstanceName',
         ]
         self._valid_wildcard_attributes = []
@@ -95,6 +159,8 @@ class Infographic(Component):
             'width',
             'height',
             'padding',
+            'exportTrigger',
+            'exportEvent',
             'debugWindowInstanceName',
         ]
         self.available_wildcard_properties = []
