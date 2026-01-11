@@ -1,6 +1,6 @@
 {
   "name": "feffery_infographic",
-  "version": "0.1.0-a1",
+  "version": "0.1.0-a2",
   "description": "Plotly Dash components based on AntV Infographic",
   "repository": {
     "type": "git",
