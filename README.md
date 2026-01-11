@@ -15,12 +15,24 @@
 
 适用于`Python`全栈应用开发框架[Plotly Dash](https://github.com/plotly/dash)的组件库，基于[AntV Infographic](https://github.com/antvis/infographic)，提供丰富的**信息图渲染**功能。
 
+## 目录
+
+- [1 安装](#1-安装)
+- [2 API](#2-api)
+- [3 基本使用](#3-基本使用)
+- [4 信息图语法参考](#4-信息图语法参考)
+- [5 全部可用信息图示例](#5-全部可用信息图示例)
+- [6 贡献者](#6-贡献者)
+- [7 更多应用开发教程](#7-更多应用开发教程)
+
+<a id="1-安装"></a>
 ## 1 安装
 
 ```bash
 pip install feffery-infographic
 ```
 
+<a id="2-api"></a>
 ## 2 API
 
 ### Infographic 信息图渲染组件
@@ -52,6 +64,7 @@ pip install feffery-infographic
 - `type`: _string_，导出的图片格式，可能值为 `'png'` 或 `'svg'`。
 - `data`: _string_，导出的图片 `dataURL` 数据。
 
+<a id="3-基本使用"></a>
 ## 3 基本使用
 
 ```python
@@ -86,20 +99,24 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
+<a id="4-信息图语法参考"></a>
 ## 4 信息图语法参考
 
 👉 https://infographic.antv.vision/learn/infographic-syntax
 
+<a id="5-全部可用信息图示例"></a>
 ## 5 全部可用信息图示例
 
 👉 https://infographic.antv.vision/gallery
 
+<a id="6-贡献者"></a>
 ## 6 贡献者
 
 <a href = "https://github.com/HogaStack/feffery-infographic/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=HogaStack/feffery-infographic"/>
 </a>
 
+<a id="7-更多应用开发教程"></a>
 ## 7 更多应用开发教程
 
 > 微信公众号「玩转 Dash」，欢迎扫码关注 👇
