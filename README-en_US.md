@@ -6,7 +6,7 @@
 
 [![Plotly Dash](https://img.shields.io/badge/plotly-3F4F75.svg?logo=plotly&logoColor=white)](https://github.com/plotly/dash)
 [![GitHub](https://shields.io/badge/license-MIT-informational)](https://github.com/HogaStack/feffery-infographic/blob/master/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/magic-dash.svg?color=dark-green)](https://pypi.org/project/feffery-infographic)
+[![PyPI](https://img.shields.io/pypi/v/feffery-infographic.svg?color=dark-green)](https://pypi.org/project/feffery-infographic)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 </div>
