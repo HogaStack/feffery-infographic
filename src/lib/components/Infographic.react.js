@@ -18,6 +18,7 @@ const Infographic = ({
     width,
     height,
     padding,
+    editable,
     exportTrigger,
     debugWindowInstanceName,
     setProps,
@@ -32,9 +33,10 @@ const Infographic = ({
                 width: width,
                 height: height,
                 padding: padding,
+                editable: editable,
             });
         }
-    }, [width, height, padding]);
+    }, [width, height, padding, editable]);
 
     useEffect(() => {
         if (infographicRef.current) {
@@ -67,6 +69,7 @@ const Infographic = ({
             width: width,
             height: height,
             padding: padding,
+            editable: editable,
         });
 
         if (syntax) {
@@ -141,6 +144,14 @@ Infographic.propTypes = {
         PropTypes.number,
         PropTypes.arrayOf(PropTypes.number),
     ]),
+
+    /**
+     * 是否开启可编辑模式
+     * (Whether to enable editable mode)
+     * 默认值：`false`
+     * (Default: `false`)
+     */
+    editable: PropTypes.bool,
 
     /**
      * 每次有效更新都会触发针对当前信息图的图片导出、下载操作，每次执行后都会被重置为空值

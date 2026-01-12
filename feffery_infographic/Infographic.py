@@ -51,6 +51,10 @@ class Infographic(Component):
         margin, support numeric, or format like `[top, right, bottom,
         left]` array of each direction pixel margin).
 
+    - editable (boolean; optional):
+        是否开启可编辑模式 (Whether to enable editable mode) 默认值：`False` (Default:
+        `False`).
+
     - exportTrigger (dict; optional):
         每次有效更新都会触发针对当前信息图的图片导出、下载操作，每次执行后都会被重置为空值 (Each time a valid
         update is triggered, a picture export and download operation will
@@ -131,6 +135,7 @@ class Infographic(Component):
         width: typing.Optional[typing.Union[NumberType, str]] = None,
         height: typing.Optional[typing.Union[NumberType, str]] = None,
         padding: typing.Optional[typing.Union[NumberType, typing.Sequence[NumberType]]] = None,
+        editable: typing.Optional[bool] = None,
         exportTrigger: typing.Optional['ExportTrigger'] = None,
         exportEvent: typing.Optional['ExportEvent'] = None,
         debugWindowInstanceName: typing.Optional[str] = None,
@@ -145,6 +150,7 @@ class Infographic(Component):
             'width',
             'height',
             'padding',
+            'editable',
             'exportTrigger',
             'exportEvent',
             'debugWindowInstanceName',
@@ -159,6 +165,7 @@ class Infographic(Component):
             'width',
             'height',
             'padding',
+            'editable',
             'exportTrigger',
             'exportEvent',
             'debugWindowInstanceName',
