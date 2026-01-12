@@ -5,3 +5,4 @@ flask_compress
 pyyaml
 ruff
 build
+pydantic
