@@ -11,7 +11,9 @@
 
 </div>
 
-<img src="./imgs/readme-overview.webp" width="768" alt="Infographic Preview">
+<p align="center">
+  <img src="./imgs/readme-overview.webp" width="768" alt="Infographic Preview">
+</p>
 
 简体中文 | [English](./README-en_US.md)
 
