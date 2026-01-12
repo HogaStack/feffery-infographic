@@ -17,12 +17,13 @@ A component library for the `Python` full-stack application development framewor
 
 ## Table of Contents
 
-- [1 Installation](#1-installation)
-- [2 API](#2-api)
-- [3 Basic Usage](#3-basic-usage)
-- [4 Infographic Syntax Reference](#4-infographic-syntax-reference)
-- [5 All Available Infographic Examples](#5-all-available-infographic-examples)
-- [6 Contributors](#6-contributors)
+[1 安装](#1-安装)<br>
+[2 API](#2-api)<br>
+[3 基本使用](#3-基本使用)<br>
+[4 信息图语法参考](#4-信息图语法参考)<br>
+[5 全部可用信息图示例](#5-全部可用信息图示例)<br>
+[6 贡献者](#6-贡献者)<br>
+[7 更多应用开发教程](#7-更多应用开发教程)<br>
 
 <a id="1-installation"></a>
 ## 1 Installation
