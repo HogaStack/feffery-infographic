@@ -113,7 +113,7 @@ if __name__ == '__main__':
 ## 6 贡献者
 
 <a href = "https://github.com/HogaStack/feffery-infographic/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=HogaStack/feffery-infographic"/>
+  <img src = "https://contrib.rocks/image?repo=CNFeffery/feffery-infographic"/>
 </a>
 
 <a id="7-更多应用开发教程"></a>
