@@ -31,7 +31,7 @@
   "email": "fefferypzy@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "@antv/infographic": "^0.2.4",
+    "@antv/infographic": "^0.2.7",
     "ramda": "^0.26.1"
   },
   "devDependencies": {
