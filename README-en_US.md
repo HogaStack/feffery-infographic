@@ -4,10 +4,10 @@
 <h1 align="center">feffery-infographic</h1>
 <div align="center">
 
+[![Plotly Dash](https://img.shields.io/badge/plotly-3F4F75.svg?logo=plotly&logoColor=white)](https://github.com/plotly/dash)
 [![GitHub](https://shields.io/badge/license-MIT-informational)](https://github.com/HogaStack/feffery-infographic/blob/master/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/feffery-infographic.svg?color=dark-green)](https://pypi.org/project/feffery-infographic)
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/HogaStack/feffery-infographic.svg)](http://isitmaintained.com/project/HogaStack/feffery-infographic "Average time to resolve an issue")
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/HogaStack/feffery-infographic.svg)](http://isitmaintained.com/project/HogaStack/feffery-infographic "Percentage of issues still open")
+[![PyPI](https://img.shields.io/pypi/v/magic-dash.svg?color=dark-green)](https://pypi.org/project/feffery-infographic)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 
 </div>
 
