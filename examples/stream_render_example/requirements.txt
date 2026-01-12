@@ -1,0 +1,5 @@
+dash>=3.3.0
+feffery_antd_components
+feffery_dash_utils
+feffery_infographic
+feffery_utils_components>=0.3.2
