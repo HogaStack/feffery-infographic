@@ -23,13 +23,15 @@
 
 [1 安装](#1-安装)<br>
 [2 API](#2-api)<br>
-[3 基本使用](#3-基本使用)<br>
+[3 基础使用](#3-基础使用)<br>
 [4 信息图语法参考](#4-信息图语法参考)<br>
 [5 全部可用信息图示例](#5-全部可用信息图示例)<br>
 [6 贡献者](#6-贡献者)<br>
-[7 更多应用开发教程](#7-更多应用开发教程)<br>
+[7 进阶使用](#7-进阶使用)<br>
+[8 更多应用开发教程](#8-更多应用开发教程)<br>
 
 <a id="1-安装"></a>
+
 ## 1 安装
 
 ```bash
@@ -37,6 +39,7 @@ pip install feffery-infographic -U
 ```
 
 <a id="2-api"></a>
+
 ## 2 API
 
 ### Infographic 信息图渲染组件
@@ -68,8 +71,9 @@ pip install feffery-infographic -U
 - `type`: _string_，导出的图片格式，可能值为 `'png'` 或 `'svg'`。
 - `data`: _string_，导出的图片 `dataURL` 数据。
 
-<a id="3-基本使用"></a>
-## 3 基本使用
+<a id="3-基础使用"></a>
+
+## 3 基础使用
 
 ```python
 import dash
@@ -104,24 +108,36 @@ if __name__ == '__main__':
 ```
 
 <a id="4-信息图语法参考"></a>
+
 ## 4 信息图语法参考
 
 👉 https://infographic.antv.vision/learn/infographic-syntax
 
 <a id="5-全部可用信息图示例"></a>
+
 ## 5 全部可用信息图示例
 
 👉 https://infographic.antv.vision/gallery
 
 <a id="6-贡献者"></a>
+
 ## 6 贡献者
 
 <a href = "https://github.com/HogaStack/feffery-infographic/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=CNFeffery/feffery-infographic"/>
 </a>
 
-<a id="7-更多应用开发教程"></a>
-## 7 更多应用开发教程
+<a id="7-进阶使用"></a>
+
+## 7 进阶使用
+
+|   场景   |                     功能描述                      |                                源码                                |
+| :------: | :-----------------------------------------------: | :----------------------------------------------------------------: |
+| 流式渲染 | 基于最常见的`SSE`接口演示信息图语法的流式更新渲染 | [examples/stream_render_example](./examples/stream_render_example) |
+
+<a id="8-更多应用开发教程"></a>
+
+## 8 更多应用开发教程
 
 > 微信公众号「玩转 Dash」，欢迎扫码关注 👇
 
