@@ -11,6 +11,8 @@
 
 </div>
 
+<img src="./imgs/readme-overview.webp" width="768" alt="Infographic Preview">
+
 [简体中文](./README.md) | English
 
 A component library for the `Python` full-stack application development framework [Plotly Dash](https://github.com/plotly/dash), based on [AntV Infographic](https://github.com/antvis/infographic), providing rich **infographic rendering** capabilities.
@@ -29,7 +31,7 @@ A component library for the `Python` full-stack application development framewor
 ## 1 Installation
 
 ```bash
-pip install feffery-infographic
+pip install feffery-infographic -U
 ```
 
 <a id="2-api"></a>

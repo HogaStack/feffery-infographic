@@ -11,6 +11,8 @@
 
 </div>
 
+<img src="./imgs/readme-overview.webp" width="768" alt="Infographic Preview">
+
 简体中文 | [English](./README-en_US.md)
 
 适用于`Python`全栈应用开发框架[Plotly Dash](https://github.com/plotly/dash)的组件库，基于[AntV Infographic](https://github.com/antvis/infographic)，提供丰富的**信息图渲染**功能。
@@ -29,7 +31,7 @@
 ## 1 安装
 
 ```bash
-pip install feffery-infographic
+pip install feffery-infographic -U
 ```
 
 <a id="2-api"></a>
