@@ -127,3 +127,4 @@ if __name__ == '__main__':
 | :---: | :---: | :---: |
 | Stream Rendering | Demonstrates streaming update rendering of infographic syntax based on common `SSE` services | [stream_render_example](./examples/stream_render_example) |
 | Editable | Main elements like text in the infographic can be further edited manually online | [editable_example](./examples/editable_example) |
+| Download Image | Calls the component's built-in image download function, supporting `svg` and `png` formats | [download_example](./examples/download_example) |

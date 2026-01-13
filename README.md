@@ -135,6 +135,7 @@ if __name__ == '__main__':
 | :------: | :-----------------------------------------------: | :-------------------------------------------------------: |
 | 流式渲染 | 基于最常见的`SSE`服务演示信息图语法的流式更新渲染 | [stream_render_example](./examples/stream_render_example) |
 |  可编辑  |   信息图中的文字等主要元素可进一步在线手动编辑    |      [editable_example](./examples/editable_example)      |
+| 下载图片 | 调用组件内置的图片下载功能，支持`svg`、`png`格式  |      [download_example](./examples/download_example)      |
 
 <a id="8-更多应用开发教程"></a>
 
