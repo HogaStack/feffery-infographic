@@ -12,11 +12,11 @@
 
 </div>
 
+简体中文 | [English](./README-en_US.md)
+
 <p align="center">
   <img src="./imgs/readme-overview.webp" width="768" alt="Infographic Preview">
 </p>
-
-简体中文 | [English](./README-en_US.md)
 
 适用于`Python`全栈应用开发框架[Plotly Dash](https://github.com/plotly/dash)的组件库，基于[AntV Infographic](https://github.com/antvis/infographic)，提供丰富的**信息图渲染**功能。
 
@@ -55,6 +55,7 @@ pip install feffery-infographic -U
 | width                   | `number` \| `string` | -      | 信息图容器宽度，支持数值或字符串（如 `'100%'`）                          |
 | height                  | `number` \| `string` | -      | 信息图容器高度，支持数值或字符串（如 `'500px'`）                         |
 | padding                 | `number` \| `list`   | -      | 信息图容器内边距，支持数值或数组格式（如 `[top, right, bottom, left]`）  |
+| editable                | `boolean`            | `False`| 是否开启可编辑模式                                                       |
 | exportTrigger           | `dict`               | -      | 触发图片导出或下载操作的配置对象，每次更新都会触发操作并在执行后重置为空 |
 | exportEvent             | `dict`               | -      | 监听最近一次图片导出事件的数据对象                                       |
 | debugWindowInstanceName | `string`             | -      | 调试专用，设置后会将当前组件实例挂载到 `window` 对象下的指定变量名       |

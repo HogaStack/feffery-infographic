@@ -12,11 +12,11 @@
 
 </div>
 
+[简体中文](./README.md) | English
+
 <p align="center">
   <img src="./imgs/readme-overview.webp" width="768" alt="Infographic Preview">
 </p>
-
-[简体中文](./README.md) | English
 
 A component library for the `Python` full-stack application development framework [Plotly Dash](https://github.com/plotly/dash), based on [AntV Infographic](https://github.com/antvis/infographic), providing rich **infographic rendering** capabilities.
 
@@ -52,6 +52,7 @@ pip install feffery-infographic -U
 | width | `number` \| `string` | - | Width of the infographic container, supports number or string (e.g., `'100%'`). |
 | height | `number` \| `string` | - | Height of the infographic container, supports number or string (e.g., `'500px'`). |
 | padding | `number` \| `list` | - | Padding of the infographic container, supports number or array format (e.g., `[top, right, bottom, left]`). |
+| editable | `boolean` | `False` | Whether to enable editable mode. |
 | exportTrigger | `dict` | - | Configuration object for triggering image export or download operations. Each update triggers the operation and resets to empty after execution. |
 | exportEvent | `dict` | - | Data object listening for the latest image export event. |
 | debugWindowInstanceName | `string` | - | For debugging purposes. If set, mounts the current component instance to the `window` object under the specified variable name. |
