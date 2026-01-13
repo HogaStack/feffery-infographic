@@ -82,27 +82,30 @@ app = dash.Dash(__name__)
 app.layout = html.Div(
     [
         fi.Infographic(
-            padding=20,
-            height=500,
-            # Define infographic syntax
+            # 定义信息图语法
             syntax="""
 infographic list-row-simple-horizontal-arrow
 data
   items
-    - label Step 1
-      desc Start
-    - label Step 2
-      desc In Progress
-    - label Step 3
-      desc Completed
-"""
+    - label 步骤 1
+      desc 开始
+    - label 步骤 2
+      desc 进行中
+    - label 步骤 3
+      desc 完成
+""",
         )
-    ]
+    ],
+    style={'padding': 50},
 )
 
 if __name__ == '__main__':
     app.run(debug=True)
 ```
+
+<p align="center">
+  <img src="./imgs/basic_usage_screenshot.png" width="768" alt="Basic Usage">
+</p>
 
 <a id="4-infographic-syntax-reference"></a>
 ## 4 Infographic Syntax Reference
