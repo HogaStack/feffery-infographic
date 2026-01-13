@@ -2,6 +2,7 @@
 	<img src="./imgs/fi-logo.svg" height=300></img>
 </p>
 <h1 align="center">feffery-infographic</h1>
+<p align="center">🦋 Easily build next-generation declarative infographic visualizations</p>
 <div align="center">
 
 [![Plotly Dash](https://img.shields.io/badge/plotly-3F4F75.svg?logo=plotly&logoColor=white)](https://github.com/plotly/dash)
