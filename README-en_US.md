@@ -125,4 +125,5 @@ if __name__ == '__main__':
 
 | Scenario | Description | Source Code |
 | :---: | :---: | :---: |
-| Stream Rendering | Demonstrates streaming updates of infographic syntax rendering based on the common `SSE` interface | [examples/stream_render_example](./examples/stream_render_example) |
+| Stream Rendering | Demonstrates streaming update rendering of infographic syntax based on common `SSE` services | [stream_render_example](./examples/stream_render_example) |
+| Editable | Main elements like text in the infographic can be further edited manually online | [editable_example](./examples/editable_example) |
