@@ -1,6 +1,6 @@
 {
   "name": "feffery_infographic",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Plotly Dash components based on AntV Infographic",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
   "email": "fefferypzy@gmail.com",
   "license": "MIT",
   "dependencies": {
-    "@antv/infographic": "^0.2.7",
+    "@antv/infographic": "^0.2.8",
     "ramda": "^0.26.1"
   },
   "devDependencies": {
