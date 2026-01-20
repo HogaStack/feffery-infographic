@@ -73,6 +73,27 @@ pip install feffery-infographic -U
 - `type`: _string_，导出的图片格式，可能值为 `'png'` 或 `'svg'`。
 - `data`: _string_，导出的图片 `dataURL` 数据。
 
+### 内置提示词模块
+
+`feffery_infographic.prompts` 模块内置了针对大型语言模型（LLM）的提示词，旨在辅助生成标准的信息图语法内容。
+
+| 变量名           | 说明                                                                 |
+| :--------------- | :------------------------------------------------------------------- |
+| `base_prompt`    | 适用于中文场景的系统提示词，包含详细的语法规范、模板说明及生成流程。 |
+| `base_prompt_en` | 适用于英文场景的系统提示词，内容结构与 `base_prompt` 保持一致。      |
+
+**使用示例：**
+
+```python
+from feffery_infographic.prompts import base_prompt
+
+# 将 base_prompt 作为 system message 传递给 LLM
+messages = [
+    {"role": "system", "content": base_prompt},
+    {"role": "user", "content": "请帮我生成一个关于互联网发展史的时间轴信息图"}
+]
+```
+
 <a id="3-基础使用"></a>
 
 ## 3 基础使用

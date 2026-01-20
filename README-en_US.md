@@ -70,6 +70,27 @@ pip install feffery-infographic -U
 - `type`: *string*, format of the exported image. Possible values are `'png'` or `'svg'`.
 - `data`: *string*, `dataURL` data of the exported image.
 
+### Built-in Prompt Module
+
+The `feffery_infographic.prompts` module includes built-in prompts for Large Language Models (LLMs), designed to assist in generating standard infographic syntax content.
+
+| Variable Name | Description |
+| :--- | :--- |
+| `base_prompt` | System prompt suitable for Chinese scenarios, containing detailed syntax specifications, template descriptions, and generation processes. |
+| `base_prompt_en` | System prompt suitable for English scenarios, with content structure consistent with `base_prompt`. |
+
+**Usage Example:**
+
+```python
+from feffery_infographic.prompts import base_prompt_en
+
+# Pass base_prompt_en as a system message to the LLM
+messages = [
+    {"role": "system", "content": base_prompt_en},
+    {"role": "user", "content": "Please help me generate a timeline infographic about the history of the Internet."}
+]
+```
+
 <a id="3-basic-usage"></a>
 ## 3 Basic Usage
 
