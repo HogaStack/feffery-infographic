@@ -15,6 +15,6 @@ index.html
 package-lock.json
 /.build_cache
 /jl
-FefferyAntdComponents.jl
+*.jl
 .Rbuildignore
 /assets

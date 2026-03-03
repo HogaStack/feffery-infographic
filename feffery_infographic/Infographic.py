@@ -5,13 +5,10 @@ import typing  # noqa: F401
 from dash.development.base_component import Component, _explicitize_args
 from typing_extensions import Literal, NotRequired, TypedDict  # noqa: F401
 
+ComponentSingleType = typing.Union[str, int, float, Component, None]
 ComponentType = typing.Union[
-    str,
-    int,
-    float,
-    Component,
-    None,
-    typing.Sequence[typing.Union[str, int, float, Component, None]],
+    ComponentSingleType,
+    typing.Sequence[ComponentSingleType],
 ]
 
 NumberType = typing.Union[typing.SupportsFloat, typing.SupportsInt, typing.SupportsComplex]

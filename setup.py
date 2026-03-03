@@ -13,6 +13,7 @@ package_name = package['name'].replace(' ', '_').replace('-', '_')
 setup(
     name=package_name,
     version=package['version'],
+    homepage=package['homepage'],
     author=package['author'],
     packages=[package_name],
     include_package_data=True,
